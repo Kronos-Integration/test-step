@@ -1,4 +1,9 @@
-function checkStepStatic(aStep, additionalAsserts) {
+const chai = require('chai'),
+  assert = chai.assert,
+  expect = chai.expect,
+  should = chai.should();
+
+function checkStepStatic(manager, aStep, additionalAsserts) {
   describe('manager', function () {
     it('present', function () {
       assert.equal(aStep.manager, manager);
@@ -16,7 +21,7 @@ function checkStepStatic(aStep, additionalAsserts) {
   }
 }
 
-function checkStepLivecycle(aStep, additionalAsserts) {
+function checkStepLivecycle(manager, aStep, additionalAsserts) {
   it('can be stopped in stopped state', function (done) {
     aStep.stop().then(
       function (step) {
@@ -125,6 +130,22 @@ function checkStepLivecycle(aStep, additionalAsserts) {
 
     assert.equal(aStep.state, 'starting');
   });
+
+  /*
+        aStep.remove().then(function (step) {
+          try {
+            assert.equal(aStep, step);
+            assert.equal(aStep.state, 'removed');
+            if (additionalAsserts) {
+              additionalAsserts(aStep, 'removed');
+            }
+            done();
+          } catch (e) {
+            done(e);
+          }
+        }, done);
+  */
+
 }
 
 

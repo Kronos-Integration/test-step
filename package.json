@@ -15,7 +15,9 @@
   },
   "homepage": "https://github.com/Kronos-Integration/kronos-test-step#readme",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "3.2.0"
+  },
   "contributors": [{
     "name": "Torsten Link",
     "email": "torstenlink@gmx.de"
