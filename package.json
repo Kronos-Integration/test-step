@@ -1,0 +1,30 @@
+{
+  "name": "kronos-test-step",
+  "version": "0.0.0",
+  "description": "step testing support",
+  "main": "index.js",
+  "scripts": {
+    "doc": "jsdoc lib/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kronos-Integration/kronos-test-step.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kronos-Integration/kronos-test-step/issues"
+  },
+  "homepage": "https://github.com/Kronos-Integration/kronos-test-step#readme",
+  "dependencies": {},
+  "devDependencies": {},
+  "contributors": [{
+    "name": "Torsten Link",
+    "email": "torstenlink@gmx.de"
+  }, {
+    "name": "Markus Felten",
+    "email": "markus.felten@gmx.de"
+  }],
+  "license": "BSD-2-Clause",
+  "engines": {
+    "node": ">=4.1.2"
+  }
+}
