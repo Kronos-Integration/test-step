@@ -4,4 +4,4 @@
 const StepTest = require('./test/step_test');
 
 module.exports.checkStepStatic = StepTest.checkStepStatic;
-module.exports.checkStepLivecycle = StepTestcheckStepLivecycle;
+module.exports.checkStepLivecycle = StepTest.checkStepLivecycle;
