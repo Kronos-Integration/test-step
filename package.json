@@ -1,6 +1,5 @@
 {
   "name": "kronos-test-step",
-  "version": "0.0.0",
   "description": "step testing support",
   "main": "index.js",
   "scripts": {
@@ -14,9 +13,14 @@
     "url": "https://github.com/Kronos-Integration/kronos-test-step/issues"
   },
   "homepage": "https://github.com/Kronos-Integration/kronos-test-step#readme",
-  "dependencies": {},
+  "dependencies": {
+    "scope-reporter": "^2.1.0"
+  },
   "devDependencies": {
-    "chai": "3.2.0"
+    "chai": "3.4.0",
+    "istanbul": "^0.4.0",
+    "mocha": "2.3.3",
+    "semantic-release": "6.0.3"
   },
   "contributors": [{
     "name": "Torsten Link",
