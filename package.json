@@ -3,7 +3,8 @@
   "description": "step testing support",
   "main": "index.js",
   "scripts": {
-    "doc": "jsdoc lib/*.js"
+    "doc": "jsdoc lib/*.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
