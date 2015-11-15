@@ -1,5 +1,6 @@
 {
   "name": "kronos-test-step",
+  "version": "0.0.0",
   "description": "step testing support",
   "main": "index.js",
   "scripts": {
@@ -14,6 +15,9 @@
     "url": "https://github.com/Kronos-Integration/kronos-test-step/issues"
   },
   "homepage": "https://github.com/Kronos-Integration/kronos-test-step#readme",
+  "release": {
+    "debug": false
+  },
   "dependencies": {
     "scope-reporter": "^2.1.0"
   },
@@ -23,15 +27,18 @@
     "mocha": "2.3.3",
     "semantic-release": "4.3.5"
   },
-  "contributors": [{
-    "name": "Torsten Link",
-    "email": "torstenlink@gmx.de"
-  }, {
-    "name": "Markus Felten",
-    "email": "markus.felten@gmx.de"
-  }],
+  "contributors": [
+    {
+      "name": "Torsten Link",
+      "email": "torstenlink@gmx.de"
+    },
+    {
+      "name": "Markus Felten",
+      "email": "markus.felten@gmx.de"
+    }
+  ],
   "license": "BSD-2-Clause",
   "engines": {
-    "node": ">=4.1.2"
+    "node": ">=4.2.1"
   }
 }
