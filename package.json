@@ -19,11 +19,11 @@
     "debug": false
   },
   "dependencies": {
-    "scope-reporter": "^2.1.0"
+    "scope-reporter": "2.2.0"
   },
   "devDependencies": {
     "chai": "3.4.1",
-    "istanbul": "^0.4.0",
+    "istanbul": "0.4.1",
     "mocha": "2.3.4",
     "semantic-release": "6.0.3"
   },
