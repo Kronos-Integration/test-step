@@ -27,18 +27,35 @@ function checkStepStatic(manager, aStep, additionalAsserts) {
 }
 
 function checkStepLivecycle(manager, aStep, additionalAsserts) {
+	const livecycle = {
+		statesHistory: []
+	};
+
+	const stepStateChangedListener = function (step, oldState, newState) {
+		livecycle.statesHistory.push({
+			old: oldState,
+			new: newState
+		});
+
+		console.log(`${JSON.stringify(livecycle.statesHistory)}`);
+	};
+
+	manager.addListener('stepStateChanged', stepStateChangedListener);
+
+	if (!additionalAsserts) additionalAsserts = function () {};
+
 	it('can be stopped in stopped state', function (done) {
 		aStep.stop().then(
 			function (step) {
 				try {
 					assert.equal(aStep, step);
 					assert.equal(aStep.state, 'stopped');
+					additionalAsserts(aStep, 'stopped', livecycle);
 					done();
 				} catch (e) {
 					done(e);
 				}
 			}, done);
-		//assert.equal(aStep.state, 'failed');
 	});
 
 	it('can be started', function (done) {
@@ -46,9 +63,7 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 			try {
 				assert.equal(aStep, step);
 				assert.equal(aStep.state, 'running');
-				if (additionalAsserts) {
-					additionalAsserts(aStep, 'running');
-				}
+				additionalAsserts(aStep, 'running', livecycle);
 				setTimeout(done, 10); // wait for some requests to pass through
 			} catch (e) {
 				done(e);
@@ -62,9 +77,7 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 			try {
 				assert.equal(aStep, step);
 				assert.equal(aStep.state, 'running');
-				if (additionalAsserts) {
-					additionalAsserts(aStep, 'running');
-				}
+				additionalAsserts(aStep, 'running', livecycle);
 				done();
 			} catch (e) {
 				done(e);
@@ -78,9 +91,7 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 			try {
 				assert.equal(aStep, step);
 				assert.equal(aStep.state, 'stopped');
-				if (additionalAsserts) {
-					additionalAsserts(aStep, 'stopped');
-				}
+				additionalAsserts(aStep, 'stopped', livecycle);
 				done();
 			} catch (e) {
 				done(e);
@@ -94,9 +105,7 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 			try {
 				assert.equal(aStep, step);
 				assert.equal(aStep.state, 'stopped');
-				if (additionalAsserts) {
-					additionalAsserts(aStep, 'stopped');
-				}
+				additionalAsserts(aStep, 'stopped', livecycle);
 				done();
 			} catch (e) {
 				done(e);
@@ -111,9 +120,7 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 			try {
 				assert.equal(aStep, step);
 				assert.equal(aStep.state, 'running');
-				if (additionalAsserts) {
-					additionalAsserts(aStep, 'running');
-				}
+				additionalAsserts(aStep, 'running', livecycle);
 				//done();
 			} catch (e) {
 				done(e);
@@ -124,9 +131,7 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 			try {
 				assert.equal(aStep, step);
 				assert.equal(aStep.state, 'running');
-				if (additionalAsserts) {
-					additionalAsserts(aStep, 'running');
-				}
+				additionalAsserts(aStep, 'running', livecycle);
 				done();
 			} catch (e) {
 				done(e);
@@ -151,6 +156,7 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 	      }, done);
 	*/
 
+	manager.removeListener('stepStateChanged', stepStateChangedListener);
 }
 
 
