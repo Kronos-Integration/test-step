@@ -42,7 +42,9 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 
 	manager.addListener('stepStateChanged', stepStateChangedListener);
 
-	if (!additionalAsserts) additionalAsserts = function () {};
+	if (!additionalAsserts) additionalAsserts = function (step, state, livecycle, done) {
+		done();
+	};
 
 	it('can be stopped in stopped state', function (done) {
 		aStep.stop().then(
@@ -50,8 +52,7 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 				try {
 					assert.equal(aStep, step);
 					assert.equal(aStep.state, 'stopped');
-					additionalAsserts(aStep, 'stopped', livecycle);
-					done();
+					additionalAsserts(aStep, 'stopped', livecycle, done);
 				} catch (e) {
 					done(e);
 				}
@@ -63,8 +64,9 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 			try {
 				assert.equal(aStep, step);
 				assert.equal(aStep.state, 'running');
-				additionalAsserts(aStep, 'running', livecycle);
-				setTimeout(done, 10); // wait for some requests to pass through
+				additionalAsserts(aStep, 'running', livecycle, function () {
+					setTimeout(done, 100); // wait for some requests to pass through
+				});
 			} catch (e) {
 				done(e);
 			}
@@ -77,8 +79,7 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 			try {
 				assert.equal(aStep, step);
 				assert.equal(aStep.state, 'running');
-				additionalAsserts(aStep, 'running', livecycle);
-				done();
+				additionalAsserts(aStep, 'running', livecycle, done);
 			} catch (e) {
 				done(e);
 			}
@@ -91,8 +92,7 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 			try {
 				assert.equal(aStep, step);
 				assert.equal(aStep.state, 'stopped');
-				additionalAsserts(aStep, 'stopped', livecycle);
-				done();
+				additionalAsserts(aStep, 'stopped', livecycle, done);
 			} catch (e) {
 				done(e);
 			}
@@ -105,8 +105,7 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 			try {
 				assert.equal(aStep, step);
 				assert.equal(aStep.state, 'stopped');
-				additionalAsserts(aStep, 'stopped', livecycle);
-				done();
+				additionalAsserts(aStep, 'stopped', livecycle, done);
 			} catch (e) {
 				done(e);
 			}
@@ -120,8 +119,7 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 			try {
 				assert.equal(aStep, step);
 				assert.equal(aStep.state, 'running');
-				additionalAsserts(aStep, 'running', livecycle);
-				//done();
+				additionalAsserts(aStep, 'running', livecycle, function () {});
 			} catch (e) {
 				done(e);
 			}
@@ -131,8 +129,7 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 			try {
 				assert.equal(aStep, step);
 				assert.equal(aStep.state, 'running');
-				additionalAsserts(aStep, 'running', livecycle);
-				done();
+				additionalAsserts(aStep, 'running', livecycle, done);
 			} catch (e) {
 				done(e);
 			}
@@ -142,19 +139,18 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 	});
 
 	/*
-	      aStep.remove().then(function (step) {
-	        try {
-	          assert.equal(aStep, step);
-	          assert.equal(aStep.state, 'removed');
-	          if (additionalAsserts) {
-	            additionalAsserts(aStep, 'removed');
-	          }
-	          done();
-	        } catch (e) {
-	          done(e);
-	        }
-	      }, done);
-	*/
+		it('can be removed', function (done) {
+			aStep.stop().then(aStep.remove().then(function (step) {
+				try {
+					assert.equal(aStep, step);
+					assert.equal(aStep.state, 'removed');
+					additionalAsserts(aStep, 'removed', livecycle, done);
+				} catch (e) {
+					done(e);
+				}
+			}, done));
+});
+*/
 
 	manager.removeListener('stepStateChanged', stepStateChangedListener);
 }
