@@ -113,7 +113,6 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 		assert.equal(aStep.state, 'stopped');
 	});
 
-
 	it('can be started while starting', function (done) {
 		aStep.start().then(function (step) {
 			try {
@@ -136,6 +135,24 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 		}, done);
 
 		assert.equal(aStep.state, 'starting');
+	});
+
+	it('can be stopped while starting', function (done) {
+		aStep.stop().then(
+			function () {
+				aStep.start();
+				assert.equal(aStep.state, 'starting');
+				aStep.stop().then(function (step) {
+					try {
+						assert.equal(aStep, step);
+						assert.equal(aStep.state, 'stopped');
+						done();
+					} catch (e) {
+						done(e);
+					}
+				}, done);
+			}
+		);
 	});
 
 	/*
