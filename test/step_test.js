@@ -10,14 +10,26 @@ const chai = require('chai'),
 
 function checkStepStatic(manager, aStep, additionalAsserts) {
 	describe('manager', function () {
-		it('present', function () {
+		it('is present', function () {
 			assert.equal(aStep.manager, manager);
 		});
 	});
 
 	describe('state', function () {
-		it('stopped', function () {
+		it('is stopped', function () {
 			assert.equal(aStep.state, 'stopped');
+		});
+	});
+
+	describe('type', function () {
+		it('is defined', function () {
+			assert.isDefined(aStep.type);
+		});
+	});
+
+	describe('name', function () {
+		it('is defined ', function () {
+			assert.isDefined(aStep.name);
 		});
 	});
 
