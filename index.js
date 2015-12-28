@@ -1,7 +1,7 @@
 /* jslint node: true, esnext: true */
 "use strict";
 
-const StepTest = require('./test/step_test');
+const StepTest = require('./tests/step_test');
 const managerMock = require('./lib/manager-mock');
 
 module.exports.checkStepStatic = StepTest.checkStepStatic;
