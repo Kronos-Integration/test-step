@@ -41,7 +41,7 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 			new: newState
 		});
 
-		console.log(`${JSON.stringify(livecycle.statesHistory)}`);
+		//console.log(`${JSON.stringify(livecycle.statesHistory)}`);
 	};
 
 	manager.addListener('stepStateChanged', stepStateChangedListener);
@@ -67,9 +67,10 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 			try {
 				assert.equal(aStep, step);
 				assert.equal(aStep.state, 'running');
-				additionalAsserts(aStep, 'running', livecycle, () =>
-					setTimeout(done, 100) // wait for some requests to pass through
-				);
+				additionalAsserts(aStep, 'running', livecycle, (e) => {
+					setTimeout(done(e), 100); // wait for some requests to pass through
+				});
+
 			} catch (e) {
 				done(e);
 			}
