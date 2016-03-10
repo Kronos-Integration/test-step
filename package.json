@@ -1,7 +1,7 @@
 {
   "name": "kronos-test-step",
   "version": "0.0.0-semantic-release",
-  "description": "step testing support",
+  "description": "kronos-step testing support",
   "main": "index.js",
   "scripts": {
     "doc": "jsdoc lib/*.js",
@@ -28,16 +28,13 @@
     "cz-conventional-changelog": "^1.1.5",
     "jsdoc": "3.4.0"
   },
-  "contributors": [
-    {
-      "name": "Torsten Link",
-      "email": "torstenlink@gmx.de"
-    },
-    {
-      "name": "Markus Felten",
-      "email": "markus.felten@gmx.de"
-    }
-  ],
+  "contributors": [{
+    "name": "Torsten Link",
+    "email": "torstenlink@gmx.de"
+  }, {
+    "name": "Markus Felten",
+    "email": "markus.felten@gmx.de"
+  }],
   "license": "BSD-2-Clause",
   "engines": {
     "node": ">=5"

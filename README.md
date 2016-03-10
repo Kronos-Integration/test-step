@@ -18,7 +18,7 @@ install
 
 With [npm](http://npmjs.org) do:
 
-```
+```sh
 npm install kronos-test-step
 ```
 
