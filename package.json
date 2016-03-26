@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/Kronos-Integration/kronos-test-step#readme",
   "dependencies": {
-    "kronos-service": "2.12.4"
+    "kronos-service": "2.12.5"
   },
   "devDependencies": {
     "chai": "3.5.0",
