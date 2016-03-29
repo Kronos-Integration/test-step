@@ -25,6 +25,10 @@ function checkStepStatic(manager, aStep, additionalAsserts) {
 		it('is defined ', () => assert.isDefined(aStep.name));
 	});
 
+	describe('endpoints', () => {
+		it('has endpoints ', () => assert.isDefined(aStep.endpoints));
+	});
+
 	if (additionalAsserts) {
 		additionalAsserts();
 	}
