@@ -72,7 +72,9 @@ function checkStepLivecycle(manager, aStep, additionalAsserts) {
 				assert.equal(aStep, step);
 				assert.equal(aStep.state, 'running');
 				additionalAsserts(aStep, 'running', livecycle, (e) => {
-					setTimeout(done(e), 100); // wait for some requests to pass through
+					setTimeout(function () {
+						done(e);
+					}, 100); // wait for some requests to pass through
 				});
 
 			} catch (e) {
