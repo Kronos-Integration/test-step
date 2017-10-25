@@ -25,8 +25,8 @@
     "cz-conventional-changelog": "2.0.0",
     "istanbul": "0.4.5",
     "jsdoc": "^3.4.3",
-    "mocha": "^4.0.1",
-    "semantic-release": "^8.0.4"
+    "mocha": "^3.5.3",
+    "semantic-release": "^8.2.2"
   },
   "contributors": [
     {
@@ -40,7 +40,7 @@
   ],
   "license": "BSD-2-Clause",
   "engines": {
-    "node": ">=8.6.0"
+    "node": ">=8.7.0"
   },
   "keywords": [],
   "xo": {
