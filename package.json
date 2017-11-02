@@ -40,7 +40,7 @@
   ],
   "license": "BSD-2-Clause",
   "engines": {
-    "node": ">=8.8.1"
+    "node": ">=8.9.0"
   },
   "keywords": [],
   "xo": {
