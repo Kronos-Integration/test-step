@@ -6,8 +6,13 @@
   "scripts": {
     "doc": "./node_modules/.bin/jsdoc lib/*.js",
     "semantic-release": "semantic-release",
-    "test": "./node_modules/.bin/mocha tests/*_test.js",
-    "cover": "./node_modules/istanbul/lib/cli.js cover --hook-run-in-context ./node_modules/mocha/bin/_mocha -- --R spec --U exports tests/*_test.js"
+    "test": "ava",
+    "cover": "nyc --temp-directory build/nyc ava",
+    "precover": "rollup -c tests/rollup.config.js",
+    "pretest": "rollup -c tests/rollup.config.js",
+    "posttest": "npm run prepare && markdown-doctest",
+    "prepare": "rollup -c",
+    "docs": "jsdoc2md --configure doc/jsdoc.json -l off -t doc/README.hbs -f src/*.js >README.md"
   },
   "repository": {
     "type": "git",
@@ -21,12 +26,17 @@
     "kronos-service": "^4.8.2"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "cz-conventional-changelog": "2.1.0",
-    "istanbul": "0.4.5",
-    "jsdoc": "^3.4.3",
-    "mocha": "^3.5.3",
-    "semantic-release": "^9.1.1"
+    "semantic-release": "^10.0.1",
+    "jsdoc-to-markdown": "^3.0.2",
+    "jsdoc-babel": "^0.3.0",
+    "markdown-doctest": "^0.9.1",
+    "nyc": "^11.3.0",
+    "ava": "^0.23.0",
+    "rollup": "^0.52.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-multi-entry": "^2.0.2",
+    "babel-preset-env": "^1.6.1",
+    "xo": "^0.19.0"
   },
   "contributors": [
     {
@@ -48,7 +58,27 @@
   },
   "template": {
     "repository": {
-      "url": "https://github.com/Kronos-Tools/npm-package-template-minimal.git"
+      "url": "https://github.com/arlac77/npm-package-template.git"
     }
+  },
+  "ava": {
+    "files": [
+      "build/*-test.js"
+    ],
+    "presets": [
+      "env"
+    ],
+    "require": [
+      "babel-register"
+    ]
+  },
+  "nyc": {
+    "include": [
+      "build/*-test.js"
+    ],
+    "reporter": [
+      "lcov"
+    ],
+    "report-dir": "./build/coverage"
   }
 }
