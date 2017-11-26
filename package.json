@@ -2,7 +2,8 @@
   "name": "kronos-test-step",
   "version": "0.0.0-semantic-release",
   "description": "kronos-step testing support",
-  "main": "index.js",
+  "main": "dist/ava-step.js",
+  "module": "src/ava-step.js",
   "scripts": {
     "doc": "./node_modules/.bin/jsdoc lib/*.js",
     "semantic-release": "semantic-release",
@@ -23,19 +24,21 @@
   },
   "homepage": "https://github.com/Kronos-Integration/kronos-test-step#readme",
   "dependencies": {
+    "ava": "^0.23.0",
     "kronos-service": "^4.8.2"
   },
+  "peerDependency": {},
   "devDependencies": {
-    "semantic-release": "^10.0.1",
-    "jsdoc-to-markdown": "^3.0.2",
+    "babel-preset-env": "^1.6.1",
     "jsdoc-babel": "^0.3.0",
+    "jsdoc-to-markdown": "^3.0.2",
+    "kronos-step": "^5.4.0",
     "markdown-doctest": "^0.9.1",
     "nyc": "^11.3.0",
-    "ava": "^0.23.0",
     "rollup": "^0.52.0",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-multi-entry": "^2.0.2",
-    "babel-preset-env": "^1.6.1",
+    "semantic-release": "^10.0.1",
     "xo": "^0.19.0"
   },
   "contributors": [
