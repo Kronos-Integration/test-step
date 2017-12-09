@@ -25,7 +25,7 @@
   "homepage": "https://github.com/Kronos-Integration/kronos-test-step#readme",
   "dependencies": {
     "ava": "^0.24.0",
-    "kronos-service": "^4.8.2"
+    "kronos-service": "^4.10.1"
   },
   "peerDependency": {},
   "devDependencies": {
