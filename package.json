@@ -1,9 +1,21 @@
 {
   "name": "kronos-test-step",
   "version": "0.0.0-semantic-release",
-  "description": "kronos-step testing support",
   "main": "dist/ava-step.js",
   "module": "src/ava-step.js",
+  "description": "kronos-step testing support",
+  "keywords": [],
+  "contributors": [
+    {
+      "name": "Torsten Link",
+      "email": "torstenlink@gmx.de"
+    },
+    {
+      "name": "Markus Felten",
+      "email": "markus.felten@gmx.de"
+    }
+  ],
+  "license": "BSD-2-Clause",
   "scripts": {
     "doc": "./node_modules/.bin/jsdoc lib/*.js",
     "semantic-release": "semantic-release",
@@ -16,19 +28,10 @@
     "docs": "documentation readme src/ava-step.js --section=API",
     "lint": "documentation lint src/ava-step.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Kronos-Integration/kronos-test-step.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Kronos-Integration/kronos-test-step/issues"
-  },
-  "homepage": "https://github.com/Kronos-Integration/kronos-test-step#readme",
   "dependencies": {
     "ava": "^0.24.0",
     "kronos-service": "^4.13.3"
   },
-  "peerDependency": {},
   "devDependencies": {
     "kronos-step": "^5.6.4",
     "markdown-doctest": "^0.9.1",
@@ -39,29 +42,17 @@
     "xo": "^0.19.0",
     "documentation": "^5.3.5"
   },
-  "contributors": [
-    {
-      "name": "Torsten Link",
-      "email": "torstenlink@gmx.de"
-    },
-    {
-      "name": "Markus Felten",
-      "email": "markus.felten@gmx.de"
-    }
-  ],
-  "license": "BSD-2-Clause",
   "engines": {
     "node": ">=8.9.3"
   },
-  "keywords": [],
-  "xo": {
-    "space": true
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kronos-Integration/kronos-test-step.git"
   },
-  "template": {
-    "repository": {
-      "url": "https://github.com/arlac77/npm-package-template.git"
-    }
+  "bugs": {
+    "url": "https://github.com/Kronos-Integration/kronos-test-step/issues"
   },
+  "homepage": "https://github.com/Kronos-Integration/kronos-test-step#readme",
   "ava": {
     "files": [
       "build/*-test.js"
@@ -81,5 +72,14 @@
       "lcov"
     ],
     "report-dir": "./build/coverage"
-  }
+  },
+  "xo": {
+    "space": true
+  },
+  "template": {
+    "repository": {
+      "url": "https://github.com/arlac77/npm-package-template.git"
+    }
+  },
+  "peerDependency": {}
 }
