@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "ava": "^0.24.0",
-    "kronos-service": "^4.13.3"
+    "kronos-service": "^4.13.4"
   },
   "devDependencies": {
     "kronos-step": "^5.6.4",
