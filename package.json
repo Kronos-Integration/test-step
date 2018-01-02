@@ -1,5 +1,5 @@
 {
-  "name": "kronos-test-step",
+  "name": "@kronos-integration/test-step",
   "version": "0.0.0-semantic-release",
   "main": "dist/ava-step.js",
   "module": "src/ava-step.js",
@@ -17,7 +17,6 @@
   ],
   "license": "BSD-2-Clause",
   "scripts": {
-    "doc": "./node_modules/.bin/jsdoc lib/*.js",
     "semantic-release": "semantic-release",
     "test": "ava",
     "cover": "nyc --temp-directory build/nyc ava",
@@ -39,7 +38,6 @@
     "rollup": "^0.53.3",
     "rollup-plugin-multi-entry": "^2.0.2",
     "semantic-release": "^11.1.0",
-    "xo": "^0.19.0",
     "documentation": "^5.3.5"
   },
   "engines": {
@@ -54,23 +52,13 @@
   },
   "homepage": "https://github.com/Kronos-Integration/kronos-test-step#readme",
   "ava": {
-    "files": [
-      "build/*-test.js"
-    ],
-    "presets": [
-      "env"
-    ],
-    "require": [
-      "babel-register"
-    ]
+    "files": ["build/*-test.js"],
+    "presets": ["env"],
+    "require": ["babel-register"]
   },
   "nyc": {
-    "include": [
-      "build/*-test.js"
-    ],
-    "reporter": [
-      "lcov"
-    ],
+    "include": ["build/*-test.js"],
+    "reporter": ["lcov"],
     "report-dir": "./build/coverage"
   },
   "xo": {
@@ -80,6 +68,5 @@
     "repository": {
       "url": "https://github.com/arlac77/npm-package-template.git"
     }
-  },
-  "peerDependency": {}
+  }
 }
