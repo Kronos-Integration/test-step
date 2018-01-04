@@ -45,12 +45,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kronos-integration/@kronos-integration/test-step.git"
+    "url": "git+https://github.com/Kronos-Integration/@kronos-integration/test-step.git"
   },
   "bugs": {
-    "url": "https://github.com/kronos-integration/@kronos-integration/test-step/issues"
+    "url": "https://github.com/Kronos-Integration/@kronos-integration/test-step/issues"
   },
-  "homepage": "https://github.com/kronos-integration/@kronos-integration/test-step#readme",
+  "homepage": "https://github.com/Kronos-Integration/@kronos-integration/test-step#readme",
   "ava": {
     "files": [
       "build/*-test.js"
