@@ -4,6 +4,9 @@
   "main": "dist/ava-step.js",
   "module": "src/ava-step.js",
   "description": "kronos-step testing support",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [],
   "contributors": [
     {
@@ -52,23 +55,13 @@
   },
   "homepage": "https://github.com/Kronos-Integration/test-step#readme",
   "ava": {
-    "files": [
-      "build/*-test.js"
-    ],
-    "presets": [
-      "env"
-    ],
-    "require": [
-      "babel-register"
-    ]
+    "files": ["build/*-test.js"],
+    "presets": ["env"],
+    "require": ["babel-register"]
   },
   "nyc": {
-    "include": [
-      "build/*-test.js"
-    ],
-    "reporter": [
-      "lcov"
-    ],
+    "include": ["build/*-test.js"],
+    "reporter": ["lcov"],
     "report-dir": "./build/coverage"
   },
   "xo": {
