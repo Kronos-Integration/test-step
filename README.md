@@ -18,7 +18,7 @@
 
 # @kronos-integration/test-step
 
-kronos-step testing support
+kronos-step testing support with ava
 
 # API
 
@@ -52,8 +52,8 @@ Type: [Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Sta
 
 **Parameters**
 
--   `t` **ava** 
--   `instance` **[Step](#step)** 
+-   `t` **ava**
+-   `instance` **[Step](#step)**
 
 ## LivecycleAsserts
 
@@ -61,10 +61,10 @@ Type: [Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Sta
 
 **Parameters**
 
--   `t` **ava** 
--   `instance` **[Step](#step)** 
--   `livecycle` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
-    -   `livecycle.statesHistory` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** 
+-   `t` **ava**
+-   `instance` **[Step](#step)**
+-   `livecycle` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+    -   `livecycle.statesHistory` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
 
 ## stepTestStatic
 
@@ -72,10 +72,10 @@ Run static (initialization) tests
 
 **Parameters**
 
--   `t` **ava** 
--   `Factory` **[StepFactory](#stepfactory)** 
--   `config` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
--   `owner` **[Owner](#owner)** 
+-   `t` **ava**
+-   `Factory` **[StepFactory](#stepfactory)**
+-   `config` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+-   `owner` **[Owner](#owner)**
 -   `type` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**  (optional, default `undefined`)
 -   `additionalAsserts` **[StaticAsserts](#staticasserts)**  (optional, default `dummy`)
 
@@ -85,9 +85,9 @@ Run livecycle tests
 
 **Parameters**
 
--   `t` **ava** 
--   `step` **[Step](#step)** 
--   `owner` **[Owner](#owner)** 
+-   `t` **ava**
+-   `step` **[Step](#step)**
+-   `owner` **[Owner](#owner)**
 -   `additionalAsserts` **[LivecycleAsserts](#livecycleasserts)**  (optional, default `dummy`)
 
 # install
