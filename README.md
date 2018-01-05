@@ -32,7 +32,7 @@ kronos-step testing support
 -   [StaticAsserts](#staticasserts)
 -   [LivecycleAsserts](#livecycleasserts)
 -   [stepTestStatic](#stepteststatic)
--   [checkStepLivecycle](#checksteplivecycle)
+-   [stepTestLivecycle](#steptestlivecycle)
 
 ## Step
 
@@ -63,22 +63,25 @@ Type: [Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Sta
 
 -   `t` **ava** 
 -   `instance` **[Step](#step)** 
--   `state` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `livecycle` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
     -   `livecycle.statesHistory` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** 
 
 ## stepTestStatic
+
+Run static (initialization) tests
 
 **Parameters**
 
 -   `t` **ava** 
 -   `Factory` **[StepFactory](#stepfactory)** 
 -   `config` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
--   `type` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `owner` **[Owner](#owner)** 
+-   `type` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**  (optional, default `undefined`)
 -   `additionalAsserts` **[StaticAsserts](#staticasserts)**  (optional, default `dummy`)
 
-## checkStepLivecycle
+## stepTestLivecycle
+
+Run livecycle tests
 
 **Parameters**
 

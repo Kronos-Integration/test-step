@@ -22,31 +22,34 @@ async function dummy() {}
  * @callback LivecycleAsserts
  * @param {ava} t
  * @param {Step} instance
- * @param {string} state
  * @param {Object} livecycle
  * @param {string[]} livecycle.statesHistory
  */
 
 /**
+ * Run static (initialization) tests
  * @param {ava} t
  * @param {StepFactory} Factory
  * @param {Object} config
- * @param {string} type
  * @param {Owner} owner
+ * @param {string} type
  * @param {StaticAsserts} additionalAsserts
  */
 export async function stepTestStatic(
   t,
   Factory,
   config,
-  type,
   owner,
+  type = undefined,
   additionalAsserts = dummy
 ) {
   const instance = new Factory(config, owner);
 
   t.is(instance.state, 'stopped');
-  t.is(instance.type, type);
+
+  if (type !== undefined) {
+    t.is(instance.type, type);
+  }
 
   t.is(instance.endpoints !== undefined, true);
 
@@ -54,12 +57,13 @@ export async function stepTestStatic(
 }
 
 /**
+ * Run livecycle tests
  * @param {ava} t
  * @param {Step} step
  * @param {Owner} owner
  * @param {LivecycleAsserts} additionalAsserts
  */
-export async function checkStepLivecycle(
+export async function stepTestLivecycle(
   t,
   step,
   owner,
@@ -81,11 +85,12 @@ export async function checkStepLivecycle(
   await step.stop();
 
   t.is(step.state, 'stopped');
-  await additionalAsserts(t, step, 'stopped', livecycle);
+  await additionalAsserts(t, step, livecycle);
 
   await step.start();
 
   t.is(step.state, 'running');
+  await additionalAsserts(t, step, livecycle);
 
   owner.removeListener('stepStateChanged', stepStateChangedListener);
 }
