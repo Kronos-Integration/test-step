@@ -1,6 +1,6 @@
 {
   "name": "@kronos-integration/test-step",
-  "version": "4.0.0",
+  "version": "4.0.2",
   "main": "dist/ava-step.js",
   "module": "src/ava-step.js",
   "description": "kronos-step testing support",
