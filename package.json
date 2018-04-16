@@ -38,7 +38,7 @@
   "devDependencies": {
     "kronos-step": "^5.6.6",
     "markdown-doctest": "^0.9.1",
-    "rollup": "^0.57.1",
+    "rollup": "^0.58.0",
     "nyc": "^11.6.0",
     "rollup-plugin-multi-entry": "^2.0.2",
     "semantic-release": "^15.1.7",
