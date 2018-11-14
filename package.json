@@ -62,7 +62,8 @@
   "homepage": "https://github.com/Kronos-Integration/test-step#readme",
   "ava": {
     "files": [
-      "tests/*-test.js"
+      "tests/*-test.js",
+      "tests/*-test.mjs"
     ],
     "presets": [
       "env"
