@@ -36,7 +36,7 @@
   "devDependencies": {
     "kronos-step": "^5.6.6",
     "markdown-doctest": "^0.9.1",
-    "rollup": "^0.67.1",
+    "rollup": "^0.67.3",
     "semantic-release": "^15.12.0",
     "documentation": "^8.1.2",
     "travis-deploy-once": "^5.0.9",
