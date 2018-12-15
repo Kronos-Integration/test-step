@@ -30,7 +30,7 @@
     "travis-deploy-once": "travis-deploy-once"
   },
   "dependencies": {
-    "ava": "^0.25.0",
+    "ava": "^1.0.1",
     "kronos-service": "^4.16.0"
   },
   "devDependencies": {
