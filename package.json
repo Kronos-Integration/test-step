@@ -37,7 +37,7 @@
     "documentation": "^12.1.2",
     "esm": "^3.2.25",
     "kronos-step": "^5.6.6",
-    "markdown-doctest": "^0.9.1",
+    "markdown-doctest": "^1.0.0",
     "semantic-release": "^15.13.26"
   },
   "engines": {
