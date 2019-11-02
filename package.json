@@ -38,7 +38,7 @@
     "esm": "^3.2.25",
     "kronos-step": "^5.6.6",
     "markdown-doctest": "^1.0.0",
-    "semantic-release": "^15.13.29"
+    "semantic-release": "^15.13.30"
   },
   "engines": {
     "node": ">=12.12.0"
