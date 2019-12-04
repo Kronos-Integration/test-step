@@ -1,10 +1,11 @@
 {
   "name": "@kronos-integration/test-step",
   "version": "0.0.0-semantic-release",
-  "type": "module",
   "publishConfig": {
     "access": "public"
   },
+  "sideEffects": false,
+  "type": "module",
   "main": "dist/ava-step.js",
   "module": "src/ava-step.js",
   "description": "kronos-step testing support with ava",
@@ -70,6 +71,5 @@
     "repository": {
       "url": "https://github.com/arlac77/npm-package-template-esm-only.git"
     }
-  },
-  "sideEffects": false
+  }
 }
