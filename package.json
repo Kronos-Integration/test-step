@@ -6,7 +6,7 @@
   },
   "sideEffects": false,
   "type": "module",
-  "main": "dist/ava-step.js",
+  "main": "src/ava-step.js",
   "module": "src/ava-step.js",
   "description": "kronos-step testing support with ava",
   "keywords": [],
