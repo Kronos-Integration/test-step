@@ -1,6 +1,3 @@
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![Known Vulnerabilities](https://snyk.io/test/github/Kronos-Integration/test-step/badge.svg)](https://snyk.io/test/github/Kronos-Integration/test-step)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![npm](https://img.shields.io/npm/v/@kronos-integration/test-step.svg)](https://www.npmjs.com/package/@kronos-integration/test-step)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![minified size](https://badgen.net/bundlephobia/min/@kronos-integration/test-step)](https://bundlephobia.com/result?p=@kronos-integration/test-step)
@@ -9,6 +6,9 @@
 [![Build Status](https://secure.travis-ci.org/Kronos-Integration/test-step.png)](http://travis-ci.org/Kronos-Integration/test-step)
 [![codecov.io](http://codecov.io/github/Kronos-Integration/test-step/coverage.svg?branch=master)](http://codecov.io/github/Kronos-Integration/test-step?branch=master)
 [![Coverage Status](https://coveralls.io/repos/Kronos-Integration/test-step/badge.svg)](https://coveralls.io/r/Kronos-Integration/test-step)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Known Vulnerabilities](https://snyk.io/test/github/Kronos-Integration/test-step/badge.svg)](https://snyk.io/test/github/Kronos-Integration/test-step)
 [![Greenkeeper](https://badges.greenkeeper.io/Kronos-Integration/test-step.svg)](https://greenkeeper.io/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/Kronos-Integration/test-step)
 
