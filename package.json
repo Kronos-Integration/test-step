@@ -35,7 +35,7 @@
     "c8": "^7.1.0",
     "documentation": "^12.3.0",
     "kronos-step": "^5.6.6",
-    "semantic-release": "^17.0.6"
+    "semantic-release": "^17.0.7"
   },
   "engines": {
     "node": ">=12.16.2"
